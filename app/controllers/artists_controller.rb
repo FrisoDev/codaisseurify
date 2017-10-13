@@ -14,4 +14,9 @@ class ArtistsController < ApplicationController
   def new
     @artist = Artist.new
   end
+
+  def songs
+    @songs = @artist.songs
+  end
+
 end
