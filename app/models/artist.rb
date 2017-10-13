@@ -1,4 +1,3 @@
 class Artist < ApplicationRecord
-scope :order_by_name, -> { order(:name) }
-has_many :songs
+has_many :songs, dependent: :destroy
 end
