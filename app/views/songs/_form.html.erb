@@ -12,7 +12,12 @@
      <%= f.label :length_sec %>
      <%= f.number_field :length_sec %>
  </div>
+ <div>
  <%= f.label :artist_id %>
    <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
-   <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+   <%= f.submit %>
+</div>
+   <div class="actions">
+  <%= f.submit "Save", class: "btn btn-primary" %>
+</div>
 <%end%>
