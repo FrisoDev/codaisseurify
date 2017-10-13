@@ -1,0 +1,6 @@
+<p><h1><%=@artist.name%></h1></p>
+<p>Formed: <%=@artist.act_since.floor%></p>
+<h4>Songs</h4>
+<% @songs.each do |song| %>
+  <span class="label label-success"><%= song.name %></span>
+<% end %>

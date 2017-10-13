@@ -3,5 +3,15 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
   end
-  # scope :order_by_name, -> { order(:name) }
+
+  def contact;
+  end
+
+  def show
+    @artist = Artist.find(params[:id])
+  end
+
+  def new
+    @artist = Artist.new
+  end
 end

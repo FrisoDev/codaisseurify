@@ -1,0 +1,18 @@
+<%= form_for @song do |f|  %>
+
+ <div class="form-group">
+     <%= f.label :name %>
+     <%= f.text_field :name %>
+ </div>
+ <div class="form-group">
+     <%= f.label :length_min %>
+     <%= f.number_field :length_min %>
+ </div>
+ <div class="form-group">
+     <%= f.label :length_sec %>
+     <%= f.number_field :length_sec %>
+ </div>
+ <%= f.label :artist_id %>
+   <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+   <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+<%end%>
