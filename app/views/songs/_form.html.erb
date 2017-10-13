@@ -1,4 +1,5 @@
-<%= form_for @song do |f|  %>
+<div class="gelul" style="text-align: center;">
+<%= form_for @song, url: {action: "create"} do |f|  %>
 
  <div class="form-group">
      <%= f.label :name %>
@@ -7,17 +8,16 @@
  <div class="form-group">
      <%= f.label :length_min %>
      <%= f.number_field :length_min %>
- </div>
- <div class="form-group">
+
      <%= f.label :length_sec %>
      <%= f.number_field :length_sec %>
  </div>
  <div>
  <%= f.label :artist_id %>
    <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
-   <%= f.submit %>
 </div>
    <div class="actions">
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "btn btn-success" %>
 </div>
 <%end%>
+</div>
