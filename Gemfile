@@ -51,3 +51,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
+
+gem 'carrierwave'

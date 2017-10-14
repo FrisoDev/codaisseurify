@@ -7,7 +7,7 @@
 <% @artist.songs.each do |song| %>
   <p>
       <div><%= song.name %></span><div>
-        <%= link_to "Remove this sonbg", song_path(song[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Remove this song", song_path(song[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
   </p>
 
 <% end %>
@@ -15,6 +15,7 @@
 </div>
 
 <p>Bio: <%=@artist.bio%></p>
+<hr>
 
 <head>
 <%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %></head>
