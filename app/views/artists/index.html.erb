@@ -1,14 +1,14 @@
 <h1>
-<h1>Artists</h1>
+<h1 style="text-align: center;">Artists</h1>
 </h1>
 </br>
 <% @artists.each do |artist| %>
-  <p><%= link_to artist.name, artist_path(artist.id) %></p>
+  <h2 style="text-align: center;"><%= link_to artist.name, artist_path(artist.id) %></h2>
 
 
+</br>
 
-
-  <div class="img-responsive">
+  <div id="ImageContainer">
   <p><%= image_tag artist.photo.image_url %> </p>
 </div>
 <% end %>
