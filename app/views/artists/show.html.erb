@@ -5,6 +5,9 @@
   <span>
     <ul>
       <li><%= song.name %></span></li>
+      <%= link_to "Remove this song", songs_path, method: :destroy, data: { confirm: "Are you sure?" } %>
     </ul>
   </span>
+
 <% end %>
+<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %>

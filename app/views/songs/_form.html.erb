@@ -1,15 +1,15 @@
 <div class="gelul" style="text-align: center;">
-<%= form_for @song, url: {action: "create"} do |f|  %>
+<%= form_for @song, :url => { :action => "create"} do |f|  %>
 
  <div class="form-group">
      <%= f.label :name %>
      <%= f.text_field :name %>
  </div>
  <div class="form-group">
-     <%= f.label :length_min %>
+     <%= f.label :Min %>
      <%= f.number_field :length_min %>
 
-     <%= f.label :length_sec %>
+     <%= f.label :Sec %>
      <%= f.number_field :length_sec %>
  </div>
  <div>
@@ -21,3 +21,5 @@
 </div>
 <%end%>
 </div>
+
+<%= link_to "Back", artists_path, class: "btn btn-default" %>
