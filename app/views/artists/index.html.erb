@@ -4,4 +4,11 @@
 </br>
 <% @artists.each do |artist| %>
   <p><%= link_to artist.name, artist_path(artist.id) %></p>
+
+
+
+
+  <div class="img-responsive">
+  <p><%= image_tag artist.photo.image_url %> </p>
+</div>
 <% end %>

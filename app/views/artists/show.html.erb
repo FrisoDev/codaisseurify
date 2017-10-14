@@ -1,9 +1,10 @@
 <div class="Wholeshow" style="text-align: center;">
+
+  <h4> Artist: </h4>
 <p><h1><%=@artist.name%></h1></p>
 <p>Formed in: <b><%=@artist.act_since.floor%></b> Genre(s): <%=@artist.genre%></p>
 <hr>
-<h4>Songs</h4>
-</br>
+<h4>Songs:</h4>
 <% @artist.songs.each do |song| %>
   <p>
       <div><%= song.name %></span><div>

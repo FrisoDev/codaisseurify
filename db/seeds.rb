@@ -9,3 +9,7 @@ song1 = Song.create!( { name: "Yellow", length_min: 4, length_sec: 34, artist: a
 song2 = Song.create!( { name: "Around the world", length_min: 6, length_sec: 21, artist: artist3})
 song3 = Song.create!( { name: "Creep", length_min: 4, length_sec: 13, artist: artist1})
 song4 = Song.create!( { name: "Sky Full of Stars", length_min: 3, length_sec: 53, artist: artist2})
+
+photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/Screen-Shot-2014-03-20-at-10.23.34-AM_lb2how.jpg", artist: artist2})
+photo2 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/radiohead_ghghhf.jpg", artist: artist1})
+photo3 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979617/Daft-Punk-Wallpaper-2560x1024-1_rjofti.jpg", artist: artist3})

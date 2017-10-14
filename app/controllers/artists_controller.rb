@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+    @photo = Photo.first
   end
 
   def contact;
@@ -24,6 +25,5 @@ class ArtistsController < ApplicationController
     @artist.destroy
     redirect_to artists_path
   end
-
 
 end
