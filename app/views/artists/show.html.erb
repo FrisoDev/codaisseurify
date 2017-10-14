@@ -1,13 +1,20 @@
+<div class="Wholeshow" style="text-align: center;">
 <p><h1><%=@artist.name%></h1></p>
-<p>Formed: <%=@artist.act_since.floor%></p>
+<p>Formed in: <b><%=@artist.act_since.floor%></b> Genre(s): <%=@artist.genre%></p>
+<hr>
 <h4>Songs</h4>
+</br>
 <% @artist.songs.each do |song| %>
-  <span>
-    <ul>
-      <li><%= song.name %></span></li>
-      <%= link_to "Remove this song", songs_path, method: :destroy, data: { confirm: "Are you sure?" } %>
-    </ul>
-  </span>
+  <p>
+      <div><%= song.name %></span><div>
+        <%= link_to "Remove this sonbg", song_path(song[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+  </p>
 
 <% end %>
-<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+<hr>
+</div>
+
+<p>Bio: <%=@artist.bio%></p>
+
+<head>
+<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %></head>

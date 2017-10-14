@@ -8,3 +8,4 @@ artist3 = Artist.create!( { name: "Daft Punk", country: "France", act_since:  19
 song1 = Song.create!( { name: "Yellow", length_min: 4, length_sec: 34, artist: artist2})
 song2 = Song.create!( { name: "Around the world", length_min: 6, length_sec: 21, artist: artist3})
 song3 = Song.create!( { name: "Creep", length_min: 4, length_sec: 13, artist: artist1})
+song4 = Song.create!( { name: "Sky Full of Stars", length_min: 3, length_sec: 53, artist: artist2})
