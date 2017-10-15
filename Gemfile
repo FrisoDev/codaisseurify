@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
+
+  gem 'factory_girl_rails'
+  gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -48,6 +51,7 @@ group :development, :test do
 end
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'shoulda-matchers'
 end
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -55,6 +59,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
+
+
 
 gem 'carrierwave'
 gem 'cloudinary'
