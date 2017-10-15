@@ -29,9 +29,9 @@ song1 = Song.create!( { name: "Yellow", length_min: 4, length_sec: 34, artist: a
  song8 = Song.create!( { name: "No Surprises", length_min: 3, length_sec: 49, artist: artist1})
  song9 = Song.create!( { name: "Fix You", length_min: 3, length_sec: 37, artist: artist2})
 
- photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/Screen-Shot-2014-03-20-at-10.23.34-AM_lb2how.jpg", artist: artist2})
- photo2 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/radiohead_ghghhf.jpg", artist: artist1})
- photo3 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979617/Daft-Punk-Wallpaper-2560x1024-1_rjofti.jpg", artist: artist3})
- photo4 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068775/moderat-press-2016-billboard-1548_dmijwv.jpg", artist: artist4})
- photo5 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068773/groove-armada-2014_ftzxtu.jpg", artist: artist5})
-# end
+#  photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/Screen-Shot-2014-03-20-at-10.23.34-AM_lb2how.jpg", artist: artist2})
+#  photo2 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979618/radiohead_ghghhf.jpg", artist: artist1})
+#  photo3 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979617/Daft-Punk-Wallpaper-2560x1024-1_rjofti.jpg", artist: artist3})
+#  photo4 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068775/moderat-press-2016-billboard-1548_dmijwv.jpg", artist: artist4})
+#  photo5 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068773/groove-armada-2014_ftzxtu.jpg", artist: artist5})
+# # end
