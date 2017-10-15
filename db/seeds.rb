@@ -1,7 +1,7 @@
 # ActiveRecord::Base.connection.disable_referential_integrity do
 Song.destroy_all
 Artist.destroy_all
-Photo.destroy_all
+# Photo.destroy_all
 
 artist1 = Artist.create!( { name: "Radiohead", country: "UK", act_since: 1985, bio: "Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985.
    The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals),
