@@ -51,7 +51,6 @@ group :development, :test do
 end
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
-  gem 'shoulda-matchers'
 end
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
