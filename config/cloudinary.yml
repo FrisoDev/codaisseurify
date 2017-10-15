@@ -1,3 +1,7 @@
 production:
+  cloud_name: "dkerkc5h8"
   api_key: "981367456926251"
   api_secret: "nHI67bunjfv5wKkVOLPD40dqmj4"
+
+development:
+  cloud_name: "dkerkc5h8"
