@@ -1,4 +1,4 @@
-ActiveRecord::Base.connection.disable_referential_integrity do
+# ActiveRecord::Base.connection.disable_referential_integrity do
 Artist.destroy_all
 Song.destroy_all
 
@@ -33,4 +33,4 @@ song1 = Song.create!( { name: "Yellow", length_min: 4, length_sec: 34, artist: a
  photo3 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1507979617/Daft-Punk-Wallpaper-2560x1024-1_rjofti.jpg", artist: artist3})
  photo4 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068775/moderat-press-2016-billboard-1548_dmijwv.jpg", artist: artist4})
  photo5 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/dkerkc5h8/image/upload/v1508068773/groove-armada-2014_ftzxtu.jpg", artist: artist5})
-end
+# end
