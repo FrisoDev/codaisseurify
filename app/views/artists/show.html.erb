@@ -9,7 +9,7 @@
   <p>
       <div><%= song.name %></span> <b>  <%= song.length_min %>:<%= song.length_sec %></b><div>
 
-        <%= link_to "Remove this song", song_path(song[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Remove this song", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?"} %>
   </p>
 
 <% end %>
@@ -17,6 +17,7 @@
 </div>
 
 <p>Bio: <%=@artist.bio%></p>
+<%= link_to "[bollocks]", new_artist_song_path(@artist)%>
 <hr>
 
 <head>

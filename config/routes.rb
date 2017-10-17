@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-    resources :songs
-  resources :artists
 
+  resources :artists do
+  resources :songs
+end
   get 'pages/home'
   root to: 'pages#home'
   #
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   # get 'artists' =>"artists#index"
   # get 'contact' =>"artists#contact"
   # get 'destroy' =>"songs#destroy"
-  delete "artists/:id" => "artist#destroy", as: :delete
+  # delete "artists/:id" => "artist#destroy", as: :delete
   #
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
