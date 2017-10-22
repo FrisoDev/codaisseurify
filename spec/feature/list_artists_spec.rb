@@ -24,3 +24,14 @@ feature 'Go Home', js: true do
     visit root_path
   end
 end
+feature 'Go Home', js: true do
+  scenario 'create song' do
+    visit root_path
+    visit new_artist_song_path(@artist)
+
+    fill_in 'name', with: 'Green'
+
+    page.execute_script("$('form').submit()")
+    expect(page).to have_content('Codaisseurify')
+  end
+end
