@@ -3,14 +3,13 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).on('ready page:load', function (){
+$( document ).ready(function() {
 
   var songsList = $('#songs-list');
   var deleteButtons = $('.delete-button');
   var deleteAllSongsButton = $('#delete-all');
   var emptyListMsg = $('#empty-list');
 
-  toggleListStatus();
   initializeEventListeners();
 
 
@@ -33,7 +32,7 @@ function submitSong(event) {
   var songTitle = inputField.val();
 
   $.ajax({
-    url: `/api/artists/${artistId}/songs`,
+    url: `/api/artists/${artistId}/songs/`,
     method: 'POST',
     data: {
       name: songTitle
@@ -49,7 +48,6 @@ function submitSong(event) {
 
 function removeSongFromDOM(item) {
   item.remove();
-  toggleListStatus();
 }
 
 function deleteSong(event) {
@@ -76,19 +74,11 @@ function deleteAllSongs() {
     method: 'DELETE',
   }).success(function () {
     removeSongsFromDOM();
-    toggleListStatus();
   }).fail(function () {
     alert('Could not delete songs.');
   });
 }
 
-function toggleListStatus() {
-  if (songsList.html().trim() == "") {
-    emptyListMsg.show();
-  } else {
-    emptyListMsg.hide();
-  }
-}
 
 function initializeEventListeners() {
   deleteButtons.on('click', deleteSong);
