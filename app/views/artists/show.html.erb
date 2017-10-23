@@ -1,4 +1,4 @@
-<div class="Wholeshow" style="text-align: center;">
+<div class="artshow" style="text-align: center;">
 
   <h4> Artist </h4>
 <p><h1><%=@artist.name%></h1></p>
@@ -7,14 +7,14 @@
 <h4>Songs:</h4>
 <ul id="songlist">
   <% @artist.songs.each do |song| %>
-    <li data-id="<%= song.id %>"><%= song.name %></li>
+    <li data-id="<%= song.id %>"><%= song.name %><button class="delete-button">x</button></li>
   <% end %>
 </ul>
 <hr>
 </div>
 
 <p>Bio: <%=@artist.bio%></p>
-<%= link_to "[bollocks]", new_artist_song_path(@artist)%>
+
 <hr>
 
 <head>
