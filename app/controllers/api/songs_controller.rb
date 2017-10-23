@@ -6,13 +6,13 @@ class Api::SongsController < ApplicationController
   end
 
   def create
-    @artist = Artist.find(params[:artist_id])
-    @song = @artist.songs.new(song_params)
+    artist = Artist.find(params[:artist_id])
+    song = artist.songs.new(song_params)
 
-    if @song.save
-     render status: 201, json: {
+    if song.save
+     render status: 200, json: {
        message: "Song successfully created",
-       room: room
+       song: song
      }.to_json
     else
       render status: 422, json: {
@@ -31,6 +31,6 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-      params.require(:song).permit(:name, :length_min, :length_sec, :artist_id)
+      params.permit(:name, :artist_id)
   end
 end

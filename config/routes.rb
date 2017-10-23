@@ -7,7 +7,9 @@ end
   root to: 'pages#home'
 
   namespace :api do
-    resources :songs
+    resources :artists do
+      resources :songs
+    end
   end
 
 end

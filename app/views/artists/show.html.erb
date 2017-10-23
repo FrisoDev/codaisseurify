@@ -5,14 +5,11 @@
 <p>Formed in: <b><%=@artist.act_since.floor%></b> Genre(s): <%=@artist.genre%></p>
 <hr>
 <h4>Songs:</h4>
-<% @artist.songs.each do |song| %>
-  <p>
-      <div><%= song.name %></span> <b>  <%= song.length_min %>:<%= song.length_sec %></b><div>
-
-        <%= link_to "Remove this song", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?"} %>
-  </p>
-
-<% end %>
+<ul id="songlist">
+  <% @artist.songs.each do |song| %>
+    <li data-id="<%= song.id %>"><%= song.name %></li>
+  <% end %>
+</ul>
 <hr>
 </div>
 
@@ -22,3 +19,12 @@
 
 <head>
 <%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %></head>
+
+<form onSubmit="submitSong(event)">
+  <label for="song-input">Tings</label>
+  <input type="text" id="song-input">
+</form>
+
+<script>
+var artistId = <%= @artist.id %>;
+</script>
