@@ -10,7 +10,6 @@ gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
-gem 'active_model_serializers'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -30,6 +29,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Use Bootstrap for styling
+gem 'bootstrap-sass'
+# Use jQuery for easier javascript
+gem 'jquery-rails'
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development, :test do
 
   gem 'factory_girl_rails'
@@ -56,14 +62,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
-# Use Bootstrap for styling
-gem 'bootstrap-sass'
-# Use jQuery for easier javascript
-gem 'jquery-rails'
-# Use Devise for authentication
-gem 'devise', '~> 4.2'
-
-
-
-gem 'carrierwave'
-gem 'cloudinary'
