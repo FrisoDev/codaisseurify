@@ -1,4 +1,5 @@
 class Api::SongsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     render status: 200, json: {
       songs: Song.all
@@ -12,7 +13,7 @@ class Api::SongsController < ApplicationController
     if song.save
      render status: 200, json: {
        message: "Song successfully created",
-       song: song
+       song: song,
      }.to_json
     else
       render status: 422, json: {
@@ -23,10 +24,15 @@ class Api::SongsController < ApplicationController
 
   def destroy
     @song=Song.find(params[:id])
-    @song.destroy
+    if @song.destroy
     render status: 200, json: {
       message: "Song was successfully removed"
     }.to_json
+  else
+    render status: 422, json: {
+      message: "fku"
+    }.to_json
+  end
   end
 
   def destroy_all
@@ -35,7 +41,7 @@ class Api::SongsController < ApplicationController
     songs.destroy_all
 
     render status: 200, json: {
-      message: "All songs deleted :("
+      message: "All songs gone :("
     }.to_json
   end
 
