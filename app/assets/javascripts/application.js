@@ -3,12 +3,9 @@
 //= require jquery_ujs
 //= require_tree .
 
-$( document ).ready(function() {
-
   var songsList = $('#songs-list');
   var deleteButtons = $('.delete-button');
   var deleteAllSongsButton = $('#delete-all');
-  var emptyListMsg = $('#empty-list');
 
   initializeEventListeners();
 
@@ -17,13 +14,13 @@ function addSongToDOM(name, id) {
   var newLi = $('<li></li>');
   newLi.html(name);
   newLi.attr('data-id', id);
-  songList.append(newLi);
+  songsList.append(newLi);
 
   var deleteButton = $('<button></button>');
  deleteButton.html('x');
  deleteButton.addClass('delete-button');
  deleteButton.on('click', deleteSong);
- listItem.append(deleteButton);
+ newLi.append(deleteButton);
 }
 
 function submitSong(event) {
@@ -32,13 +29,14 @@ function submitSong(event) {
   var songTitle = inputField.val();
 
   $.ajax({
-    url: `/api/artists/${artistId}/songs/`,
+    url: `/api/artists/${artistId}/songs`,
     method: 'POST',
     data: {
       name: songTitle
     }
   }).success(function (response) {
     var songId = response.song.id;
+    console.log(songTitle);
     addSongToDOM(songTitle, songId);
     inputField.val(null);
   }).fail(function (response) {
@@ -51,14 +49,14 @@ function removeSongFromDOM(item) {
 }
 
 function deleteSong(event) {
-  var listItem = $(event.target.parentElement);
-  var songId = listItem.attr('data-id');
+  var newLi = $(event.target.parentElement);
+  var songId = newLi.attr('data-id');
 
   $.ajax({
     url: `/api/artists/${artistId}/songs/${songId}`,
     method: 'DELETE',
   }).success(function () {
-    removeSongFromDOM(listItem);
+    removeSongFromDOM(newLi);
   }).fail(function () {
     alert('Could not delete song.');
   });
@@ -84,4 +82,3 @@ function initializeEventListeners() {
   deleteButtons.on('click', deleteSong);
   deleteAllSongsButton.on('click', deleteAllSongs);
 }
-});

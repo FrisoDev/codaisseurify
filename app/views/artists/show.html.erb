@@ -18,14 +18,12 @@
 
 <hr>
 
-<head>
-<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %></head>
+<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
 
 <form onSubmit="submitSong(event)">
-  <label for="song-input">Tings</label>
+  <label for="song-input">Add a new Song</label>
   <input type="text" id="song-input">
 </form>
-
 <script>
-var artistId = <%= @artist.id %>;
+  var artistId = <%= @artist.id %>;
 </script>
