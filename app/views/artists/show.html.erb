@@ -5,13 +5,13 @@
 <p>Formed in: <b><%=@artist.act_since.floor%></b> Genre(s): <%=@artist.genre%></p>
 <hr>
 <h4>Songs:</h4>
-<ul id="songlist">
+<ul id="songs-list">
   <% @artist.songs.each do |song| %>
     <li data-id="<%= song.id %>"><%= song.name %><button class="delete-button">x</button></li>
   <% end %>
 </ul>
 <hr>
-<button type="button" id="delete-all">Delete all songs</button>
+<button type="button" id="delete-all" >Delete all songs</button>
 </div>
 
 <p>Bio: <%=@artist.bio%></p>

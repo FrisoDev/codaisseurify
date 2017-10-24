@@ -11,6 +11,7 @@
 
 
 function addSongToDOM(name, id) {
+
   var newLi = $('<li></li>');
   newLi.html(name);
   newLi.attr('data-id', id);
@@ -36,7 +37,6 @@ function submitSong(event) {
     }
   }).success(function (response) {
     var songId = response.song.id;
-    console.log(songTitle);
     addSongToDOM(songTitle, songId);
     inputField.val(null);
   }).fail(function (response) {
