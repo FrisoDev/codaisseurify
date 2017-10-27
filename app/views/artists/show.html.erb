@@ -2,7 +2,7 @@
 
   <h4> Artist </h4>
 <p><h1><%=@artist.name%></h1></p>
-<p>Formed in: <b><%=@artist.act_since.floor%></b> Genre(s): <%=@artist.genre%></p>
+<p>Formed in: <b><%=@artist.act_since%></b> Genre(s): <%=@artist.genre%></p>
 <hr>
 <h4>Songs:</h4>
 <ul id="songs-list">
@@ -18,7 +18,7 @@
 
 <hr>
 
-<%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+<div id="delete-artist"><%= link_to "Remove this artist", artist_path(@artist[:id]), method: :delete %></div>
 
 <form onSubmit="submitSong(event)">
   <label for="song-input">Add a new Song</label>
