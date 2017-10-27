@@ -9,6 +9,8 @@
 </br>
 
   <div id="ImageContainer">
+    <% if artist? %>
   <p><%= image_tag artist.photo.image_url %> </p>
+  <% end %>
 </div>
 <% end %>

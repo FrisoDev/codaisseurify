@@ -4,6 +4,6 @@ FactoryGirl.define do
     country     {Faker::Lorem.sentence(30)}
     bio         {Faker::Lorem.sentence(30)}
     genre       {Faker::Lorem.sentence(10)}
-    song        {build(:song)}
+    id          {1}
   end
 end

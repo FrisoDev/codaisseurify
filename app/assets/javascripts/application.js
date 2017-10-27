@@ -40,7 +40,7 @@ function submitSong(event) {
     addSongToDOM(songTitle, songId);
     inputField.val(null);
   }).fail(function (response) {
-    alert("wahahjskdhasda");
+    alert("Song can not be added");
   });
 }
 

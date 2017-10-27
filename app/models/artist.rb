@@ -4,5 +4,4 @@ has_one :photo, dependent: :destroy
 
 validates :name, presence: true
 validates :bio, presence: true
-
 end
