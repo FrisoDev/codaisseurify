@@ -1,40 +1,31 @@
 require 'rails_helper'
 
 feature 'Manage songs', js: true do
-  before(:each) do
-    FactoryGirl.create :artist, id: 1, name: "Ting", genre: "Skra"
-  end
-
-  def set_test
-    visit artist_path(1)
-
-    fill_in 'song-input', with: "Bang"
-
-    page.execute_script("$('form').submit()")
-  end
+let!(:song) {FactoryGirl.create(:song)}
 
   scenario 'add' do
-    set_test
-
-    expect(page).to have_content("Bang")
+    set_art
+    expect(page).to have_content(:song)
   end
 
   scenario 'delete 1', js: true do
-    set_test
-
+    set_art
     find('.delete-button').click
-
     expect(page).to_not have_content("Bang")
   end
 
-  scenario 'delete the lot', js: true do
-
-    set_test
-    fill_in 'song-input', with: 'Some shite'
+  scenario 'delete all of the artist\'s songs', js: true do
+    set_art
+    fill_in 'song-input', with: 'Bang'
     page.execute_script("$('form').submit()")
-
     find('#delete-all', :visible => false).click
-
     expect(page).to_not have_content("Bang")
+  end
+
+
+  def set_art
+    visit artist_path(1)
+    fill_in 'song-input', with: :song
+    page.execute_script("$('form').submit()")
   end
 end
